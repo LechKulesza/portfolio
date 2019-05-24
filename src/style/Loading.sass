@@ -1,0 +1,97 @@
+@import "./variables.sass"
+    
+section.loading
+    display: block
+    overflow: hidden
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 100vh
+    background-color: $orange
+    opacity: 1
+    text-align: center
+    h1
+        position: absolute
+        top: 0
+        left: 50%
+        color: $orange
+        font-weight: 700
+        font-size: 7vw
+        line-height: 60vh
+        mix-blend-mode: difference
+        transform: translateX(-50%)
+    h1.disactive
+        animation: away 1s 1s forwards
+    span.animation
+        display: block
+        width: 70px
+        height: 70px
+        background-color: $black
+        margin: 0 auto
+        border-radius: 50%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,-50%)
+        animation: jumping .7s infinite alternate
+    span.shadow
+        display: block
+        width: 70px
+        height: 70px
+        background-color: $black
+        margin: 0 auto
+        border-radius: 50%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%,0) scale(1,.3)
+        animation: shadow .7s infinite alternate
+    span.disactive
+        animation: bigger .7s forwards
+    span.shadow.disactive
+        display: none
+    section.footer
+        position: absolute
+        bottom: 20px
+        left: 50%
+        transform: translateX(-50%)
+        font-size: 14px
+        color: $orange
+        mix-blend-mode: difference
+section.loading.disactive
+    animation: opacity .3s 1.7s forwards
+
+@keyframes jumping 
+    0%
+        transform: translate(-50%,-50%)
+    100%
+        transform: translate(-50%,-200%)
+@keyframes shadow
+    0%
+        transform: translate(-50%,0) scale(1,.3)
+    100%
+        transform: translate(-50%,0) scale(.7,.3)
+
+@keyframes bigger
+    0%
+        width: 80px
+        height: 80px
+        border-radius: 50%
+        transform: translate(-50%,-50%)
+    100%
+        width: 100vw
+        height: 100vh
+        border-radius: 0
+        transform: translate(-50%,-50%)
+
+@keyframes away
+    0%
+        left: 50%
+    100%
+        left: -100%
+@keyframes opacity
+    0%
+        opacity: 1
+    100%
+        opacity: 0
