@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../style/reset.sass";
 import "../style/App.sass";
 import Loading from "../components/Loading";
+import Navigation from "../components/Navigation";
+import Baner from "./Baner";
 
 class App extends Component {
   state = {
@@ -30,6 +32,8 @@ class App extends Component {
             classNamedSection={this.state.loading}
           />
         ) : null}
+        <Navigation />
+        <Baner />
       </>
     );
   }
