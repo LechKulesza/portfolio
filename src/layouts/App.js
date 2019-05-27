@@ -5,14 +5,13 @@ import Loading from "../components/Loading";
 import Navigation from "../components/Navigation";
 import Baner from "./Baner";
 import Info from "./Info";
+import Contact from "./Contact";
 
 const isTopInViewport = function(elem) {
   const bounding = elem.getBoundingClientRect();
   if (
-    bounding.top >= 0 &&
     bounding.top <=
-      (window.innerHeight * 0.75 ||
-        document.documentElement.clientHeight * 0.75)
+    (window.innerHeight * 0.95 || document.documentElement.clientHeight * 0.95)
   ) {
     elem.classList.add("visible");
   } else {
@@ -55,6 +54,15 @@ class App extends Component {
     isTopInViewport(document.querySelector(".info p"));
     isTopInViewport(document.querySelector(".info h1"));
     isTopInViewport(document.querySelector(".info img"));
+    isTopInViewport(document.querySelector(".wrapperContact .contact h1"));
+    isTopInViewport(document.querySelector(".wrapperContact .contact h2"));
+    isTopInViewport(
+      document.querySelector(".wrapperContact .contact textarea")
+    );
+    isTopInViewport(document.querySelector(".wrapperContact .contact button"));
+    isTopInViewport(document.querySelector(".wrapperContact .contact .name"));
+    isTopInViewport(document.querySelector(".wrapperContact .contact .mail"));
+    isTopInViewport(document.querySelector(".wrapperContact .contact .topic"));
   };
 
   render() {
@@ -69,6 +77,7 @@ class App extends Component {
         <Navigation showNavTitle={this.state.showNavTitle} />
         <Baner showNavTitle={this.state.showNavTitle} go={this.state.loading} />
         <Info />
+        <Contact />
       </>
     );
   }

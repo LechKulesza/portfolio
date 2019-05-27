@@ -1,0 +1,63 @@
+@import "./variables.sass"
+
+section.wrapperContact
+    background-color: $darkGrey
+    width: 100vw
+    section.contact
+        width: 70vw
+        overflow: hidden
+        margin: 0 auto
+        padding: 10vh 0
+        position: relative
+        color: $white
+        h1
+            font-size: 28px
+            font-weight: 700
+            margin-bottom: 20px
+            transform: translateX(-100%)
+            transition: .5s
+        h2
+            font-size: 24px
+            font-weight: 500
+            margin: 20px
+            transition: .5s
+            transform: translateX(110%)
+        input, textarea, button
+            display: block
+            margin: 20px
+            width: 250px
+            height: 28px
+            font-size: 18px
+            padding: 10px
+            transition: .5s
+        input.name
+            transform: translateX(-110%)
+        input.mail
+            transform: translateX(70vw)
+        input.topic
+            transform: translateX(-110%)
+            width: 25vw
+        textarea
+            width: 50vw
+            height: 500px
+            resize: none
+            transform: translateX(70vw)
+        .visible
+            transform: translateX(0) !important
+            opacity: 1
+        button
+            width: 150px
+            height: 50px
+            padding: 0
+            cursor: pointer
+            border: 0
+            background-color: $white
+            transform: translateX(calc(50vw - 150px)) !important
+            opacity: 0
+            &:hover
+                background-color: $orange
+            &.visible
+                transform: translateX(calc(50vw - 150px)) !important
+                opacity: 1
+
+            
