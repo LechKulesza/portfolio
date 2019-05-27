@@ -1,12 +1,12 @@
 import React from "react";
 import "../style/Navigation.sass";
 
-const Navigation = () => {
+const Navigation = props => {
   return (
     <>
-      <nav className="navbar">
+      <nav className={props.showNavTitle ? "navbar show" : "navbar"}>
         <ul className="navMain">
-          <li className="title">
+          <li className={props.showNavTitle ? "title show" : "title hide"}>
             <a href="index.html">Lech Kulesza</a>
           </li>
           <li>

@@ -1,0 +1,35 @@
+@import "./variables.sass"
+
+section.info
+    display: block
+    width: 70vw
+    padding: 10vh 0
+    margin: 0 auto
+    position: relative
+    background-color: $white
+    overflow: hidden
+    h1
+        font-size: 28px
+        font-weight: 700
+        margin-bottom: 20px
+        transform: translateX(-100%)
+        transition: .5s
+    p
+        text-align: justify
+        margin: 20px
+        transform: translateX(calc(-100% - 20px))
+        transition: .5s
+    img
+        display: inline-block
+        width: 15vw
+        height: 15vw
+        object-fit: cover
+        border-radius: 50%
+        border: 8px solid $white
+        box-shadow: 0px 0px 5px 0px $darkGrey
+        float: right
+        margin: 20px
+        transform: translateX(calc(100% + 30px))
+        transition: .5s
+    .visible
+        transform: translateX(0)

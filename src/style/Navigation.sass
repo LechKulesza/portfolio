@@ -17,13 +17,14 @@
             overflow: hidden
             a
                 color: $white
-                font-size: 22px
+                font-size: 20px
                 line-height: 65px
                 padding: 20px 25px
+                text-transform: uppercase
                 position: relative
                 top: 0
                 left: 0
-                transition: .2s
+                transition: .3s
                 &:not(.social):before
                     content: ''
                     width: 100%
@@ -43,6 +44,14 @@
         li.title
             flex-grow: 0.5
             z-index: 1
+            transition: .3s
+            &.hide
+                opacity: 0
+                a
+                    cursor: default !important
+                    pointer-events: none
+            &.show
+                opacity: 1
             a
                 font-size: 28px !important
                 color: $orange
@@ -60,4 +69,6 @@
                 &:hover
                     color: $orange
     &:hover
-        background-color: rgba(0,0,0,0.8)
+        background-color: rgba(0,0,0,1)
+    &.show
+        background-color: rgba(0,0,0,1)
