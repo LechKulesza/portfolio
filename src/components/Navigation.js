@@ -26,7 +26,7 @@ const Navigation = () => {
                 rel="noopener noreferrer"
                 href="https://pl-pl.facebook.com/kulkazgumek"
               >
-                <i class="fab fa-facebook-square" />
+                <i className="fab fa-facebook-square" />
               </a>
             </li>
             <li>
@@ -36,7 +36,7 @@ const Navigation = () => {
                 rel="noopener noreferrer"
                 href="https://www.instagram.com/kulkazgumek/"
               >
-                <i class="fab fa-instagram" />
+                <i className="fab fa-instagram" />
               </a>
             </li>
           </span>

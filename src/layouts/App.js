@@ -33,7 +33,7 @@ class App extends Component {
           />
         ) : null}
         <Navigation />
-        <Baner />
+        <Baner go={this.state.loading} />
       </>
     );
   }
