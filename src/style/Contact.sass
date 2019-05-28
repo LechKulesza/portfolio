@@ -24,29 +24,38 @@ section.wrapperContact
             transform: translateX(110%)
         input, textarea, button
             display: block
+            position: relative
             margin: 20px
             width: 250px
             height: 28px
             font-size: 18px
             padding: 10px
             transition: .5s
+        input::-webkit-input-placeholder 
+            line-height: normal !important
         input.name
             transform: translateX(-110%)
+            &.err
+                border: 3px solid $orange
         input.mail
             transform: translateX(70vw)
+            &.err
+                border: 3px solid $orange
         input.topic
             transform: translateX(-110%)
             width: 25vw
+            &.err
+                border: 3px solid $orange
         textarea
             width: 50vw
             height: 500px
             resize: none
             transform: translateX(70vw)
+            &.err
+                border: 3px solid $orange
         .visible
             transform: translateX(0) !important
             opacity: 1
-        .error
-            border: 2px solid $orange
         button
             width: 150px
             height: 50px
@@ -61,5 +70,8 @@ section.wrapperContact
             &.visible
                 transform: translateX(calc(50vw - 150px)) !important
                 opacity: 1
-
-            
+        span
+            background-color: $orange
+            display: block
+            font-size: 18px
+            color: $black

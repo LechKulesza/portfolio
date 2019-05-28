@@ -47,31 +47,36 @@ class Contact extends Component {
     name: "",
     mail: "",
     topic: "",
-    message: ""
+    message: "",
+    errors: []
   };
 
   handleChangeName = e => {
     this.setState({
       name: e.target.value
     });
+    document.querySelector(".contact .name").classList.remove("err");
   };
 
   handleChangeMail = e => {
     this.setState({
       mail: e.target.value
     });
+    document.querySelector(".contact .mail").classList.remove("err");
   };
 
   handleChangeTopic = e => {
     this.setState({
       topic: e.target.value
     });
+    document.querySelector(".contact .topic").classList.remove("err");
   };
 
   handleChangeMessage = e => {
     this.setState({
       message: e.target.value
     });
+    document.querySelector(".contact .message").classList.remove("err");
   };
 
   handleClickForm = e => {
@@ -83,9 +88,31 @@ class Contact extends Component {
       this.state.message
     );
     if (error === "clear") {
-      alert("bombastiko");
+      this.setState({
+        name: "",
+        mail: "",
+        topic: "",
+        message: "",
+        errors: []
+      });
+      alert("Wysłano");
     } else {
-      alert("ogarnij sie...");
+      const errMessage = [];
+
+      for (let i = 0; i < error.length; i++) {
+        if (error[i] === "name")
+          errMessage.push("Podaj swoje imię oraz nazwisko!");
+        if (error[i] === "mail") errMessage.push("Podaj prawidłowy mail!");
+        if (error[i] === "topic") errMessage.push("Napisz jakiś temat!");
+        if (error[i] === "message")
+          errMessage.push("Im więcej napiszesz tym lepiej!");
+      }
+      this.setState({
+        errors: errMessage
+      });
+      for (let i = 0; i < error.length; i++) {
+        document.querySelector(".contact ." + error[i]).classList.add("err");
+      }
     }
   };
 
@@ -121,13 +148,18 @@ class Contact extends Component {
               onChange={this.handleChangeMessage}
               value={this.state.message}
               name="message"
-              id="message"
+              className="message"
               cols="30"
               rows="10"
               placeholder="Wiadomość"
             />
             <button onClick={this.handleClickForm}>Wyślij</button>
           </form>
+          <span className="errorMessage">
+            {this.state.errors.length === 0
+              ? null
+              : this.state.errors.join("\n")}
+          </span>
         </section>
       </section>
     );
