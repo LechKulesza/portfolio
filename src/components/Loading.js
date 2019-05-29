@@ -10,9 +10,7 @@ const Loading = props => {
         <span className={`animation ${classNamed}`} />
         <span className={`shadow ${classNamed}`} />
         <h1 className={classNamed}>Lech Kulesza</h1>
-        <section className="footer">
-          &#9400; Copyright 2019 Lech Kulesza
-        </section>
+        <section className="copy">&#9400; Copyright 2019 Lech Kulesza</section>
       </section>
     </>
   );

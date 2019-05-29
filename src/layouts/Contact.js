@@ -155,11 +155,13 @@ class Contact extends Component {
             />
             <button onClick={this.handleClickForm}>Wyślij</button>
           </form>
-          <span className="errorMessage">
+          <div className="errorMessage">
             {this.state.errors.length === 0
               ? null
-              : this.state.errors.join("\n")}
-          </span>
+              : this.state.errors.map(item => {
+                  return <p>{item}</p>;
+                })}
+          </div>
         </section>
       </section>
     );

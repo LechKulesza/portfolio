@@ -6,6 +6,8 @@ import Navigation from "../components/Navigation";
 import Baner from "./Baner";
 import Info from "./Info";
 import Contact from "./Contact";
+import Footer from "./Footer";
+import Arrow from "../components/Arrow";
 
 const isTopInViewport = function(elem) {
   const bounding = elem.getBoundingClientRect();
@@ -78,6 +80,8 @@ class App extends Component {
         <Baner showNavTitle={this.state.showNavTitle} go={this.state.loading} />
         <Info />
         <Contact />
+        <Footer />
+        <Arrow show={this.state.showNavTitle} />
       </>
     );
   }

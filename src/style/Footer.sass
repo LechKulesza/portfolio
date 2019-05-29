@@ -1,0 +1,34 @@
+@import "./variables.sass"
+
+footer
+    width: 100vw
+    height: 170px
+    .footerContainer
+        width: 90%
+        height: 100%
+        margin: 0 auto
+        text-align: center
+        overflow: hidden
+        color: $black
+        position: relative
+        span
+            display: inline-block
+            font-size: 20px
+            line-height: 170px
+            margin: 0 35px
+            &.tel i
+                    color: $orange
+                    font-style: normal
+                    font-weight: 700
+            &.copyFooter
+                font-size: 12px
+                margin: 20px
+                line-height: normal
+                position: absolute
+                bottom: 0
+                right: 0
+            &.mailFooter a
+                transition: .3s
+                &:hover
+                    color: $orange
+            
