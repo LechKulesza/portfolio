@@ -88,6 +88,16 @@ class Contact extends Component {
       this.state.message
     );
     if (error === "clear") {
+      const textMessage = `Od ${this.state.name} \n Mail: ${this.state.mail} \n
+      Wiadomość: \n
+      ${this.state.message}`;
+      window.Email.send({
+        SecureToken: "bbab7aed-1a74-460a-a438-45b30be962a2",
+        To: "lmkulesz@icloud.com",
+        From: "lmkulesz@icloud.com",
+        Subject: this.state.topic,
+        Body: textMessage
+      }).then(message => alert(message));
       this.setState({
         name: "",
         mail: "",
@@ -95,7 +105,6 @@ class Contact extends Component {
         message: "",
         errors: []
       });
-      alert("Wysłano");
     } else {
       const errMessage = [];
 

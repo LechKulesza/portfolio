@@ -3,7 +3,10 @@ import "../style/Arrow.sass";
 
 const Arrow = props => {
   return (
-    <div className={props.show ? "arrow show" : "arrow"}>
+    <div
+      onClick={props.handleClick}
+      className={props.show ? "arrow show" : "arrow"}
+    >
       <i className="fas fa-angle-up" />
     </div>
   );

@@ -6,9 +6,9 @@ const Info = () => {
   return (
     <section className="info">
       <h1>O mnie</h1>
-
-      <img src={img1} alt="Lech Kulesza" />
-
+      <div className="wrapImg">
+        <img src={img1} alt="Lech Kulesza" />
+      </div>
       <p>
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde aliquam
         dignissimos sit atque voluptates totam esse, optio minima doloremque

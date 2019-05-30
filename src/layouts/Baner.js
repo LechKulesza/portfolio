@@ -14,7 +14,12 @@ const Baner = props => {
           Web Developer
         </h2>
       </span>
-      <a tabIndex="-1" className={props.showNavTitle ? "hide" : null} href="">
+      <a
+        tabIndex="-1"
+        className={props.showNavTitle ? "hide" : null}
+        href="#info"
+        onClick={props.handleClick}
+      >
         <i className="fas fa-angle-down" />
       </a>
     </section>

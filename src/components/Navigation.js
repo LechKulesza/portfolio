@@ -10,13 +10,19 @@ const Navigation = props => {
             <a href="index.html">Lech Kulesza</a>
           </li>
           <li>
-            <a href="">Strona główna</a>
+            <a onClick={props.handleClick} href="#main">
+              Strona główna
+            </a>
           </li>
           <li>
-            <a href="">O mnie</a>
+            <a onClick={props.handleClick} href="#info">
+              O mnie
+            </a>
           </li>
           <li>
-            <a href="">Kontakt</a>
+            <a onClick={props.handleClick} href="#contact">
+              Kontakt
+            </a>
           </li>
           <span className="navSocial">
             <li>

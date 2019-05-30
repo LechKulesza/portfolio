@@ -55,7 +55,7 @@ class App extends Component {
 
     isTopInViewport(document.querySelector(".info p"));
     isTopInViewport(document.querySelector(".info h1"));
-    isTopInViewport(document.querySelector(".info img"));
+    isTopInViewport(document.querySelector(".info .wrapImg"));
     isTopInViewport(document.querySelector(".wrapperContact .contact h1"));
     isTopInViewport(document.querySelector(".wrapperContact .contact h2"));
     isTopInViewport(
@@ -67,6 +67,22 @@ class App extends Component {
     isTopInViewport(document.querySelector(".wrapperContact .contact .topic"));
   };
 
+  handleShowIntoView = () => {
+    setTimeout(() => {
+      if (window.location.href.indexOf("main") !== -1) {
+        document.querySelector(".baner").scrollIntoView();
+      } else if (window.location.href.indexOf("info") !== -1) {
+        document.querySelector(".info").scrollIntoView();
+      } else if (window.location.href.indexOf("contact") !== -1) {
+        document.querySelector(".contact").scrollIntoView();
+      }
+    }, 100);
+  };
+
+  handleGoUp = () => {
+    window.scrollTo(0, 0);
+  };
+
   render() {
     return (
       <>
@@ -76,12 +92,19 @@ class App extends Component {
             classNamedSection={this.state.loading}
           />
         ) : null}
-        <Navigation showNavTitle={this.state.showNavTitle} />
-        <Baner showNavTitle={this.state.showNavTitle} go={this.state.loading} />
+        <Navigation
+          handleClick={this.handleShowIntoView}
+          showNavTitle={this.state.showNavTitle}
+        />
+        <Baner
+          handleClick={this.handleShowIntoView}
+          showNavTitle={this.state.showNavTitle}
+          go={this.state.loading}
+        />
         <Info />
         <Contact />
         <Footer />
-        <Arrow show={this.state.showNavTitle} />
+        <Arrow handleClick={this.handleGoUp} show={this.state.showNavTitle} />
       </>
     );
   }
