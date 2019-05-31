@@ -65,9 +65,17 @@ section.wrapperContact
             &.visible
                 transform: translateX(calc(50vw - 150px)) !important
                 opacity: 1
-        .errorMessage
+            &.loading
+                background-color: $grey
+                // pointer-events: none
+                cursor: progress
+        .errorValidation, .errorSend
             display: block
             font-size: 18px
             color: $orange
             font-weight: 700
             margin: 20px
+        .errorSend .okey
+            color: #22bc00
+        
+        

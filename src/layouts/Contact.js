@@ -48,7 +48,11 @@ class Contact extends Component {
     mail: "",
     topic: "",
     message: "",
-    errors: []
+    errors: [],
+    errorSend: {
+      flag: false,
+      message: ""
+    }
   };
 
   handleChangeName = e => {
@@ -81,6 +85,7 @@ class Contact extends Component {
 
   handleClickForm = e => {
     e.preventDefault();
+    document.querySelector(".contact form button").classList.add("loading");
     const error = formValidation(
       this.state.name,
       this.state.mail,
@@ -88,16 +93,39 @@ class Contact extends Component {
       this.state.message
     );
     if (error === "clear") {
-      const textMessage = `Od ${this.state.name} \n Mail: ${this.state.mail} \n
-      Wiadomość: \n
-      ${this.state.message}`;
+      const text = this.state.message.split("\n").join("<br />");
+      const textMessage = `Od ${this.state.name}<br />Mail: ${
+        this.state.mail
+      }<br />Wiadomość:<br /><br />${text}`;
       window.Email.send({
         SecureToken: "bbab7aed-1a74-460a-a438-45b30be962a2",
         To: "lmkulesz@icloud.com",
         From: "lmkulesz@icloud.com",
         Subject: this.state.topic,
         Body: textMessage
-      }).then(message => alert(message));
+      }).then(message => {
+        if (message === "OK") {
+          this.setState({
+            errorSend: {
+              flag: true,
+              message: "Wiadomość wysłana!"
+            }
+          });
+          document
+            .querySelector(".contact form button")
+            .classList.remove("loading");
+        } else {
+          this.setState({
+            errorSend: {
+              flag: false,
+              message: "Niestety nie udało się wysłać wiadomości..."
+            }
+          });
+          document
+            .querySelector(".contact form button")
+            .classList.remove("loading");
+        }
+      });
       this.setState({
         name: "",
         mail: "",
@@ -122,6 +150,9 @@ class Contact extends Component {
       for (let i = 0; i < error.length; i++) {
         document.querySelector(".contact ." + error[i]).classList.add("err");
       }
+      document
+        .querySelector(".contact form button")
+        .classList.remove("loading");
     }
   };
 
@@ -164,12 +195,19 @@ class Contact extends Component {
             />
             <button onClick={this.handleClickForm}>Wyślij</button>
           </form>
-          <div className="errorMessage">
+          <div className="errorValidation">
             {this.state.errors.length === 0
               ? null
               : this.state.errors.map(item => {
                   return <p>{item}</p>;
                 })}
+          </div>
+          <div className="errorSend">
+            {this.state.errorSend.flag ? (
+              <p className="okey">{this.state.errorSend.message}</p>
+            ) : (
+              <p>{this.state.errorSend.message}</p>
+            )}
           </div>
         </section>
       </section>
