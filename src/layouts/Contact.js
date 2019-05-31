@@ -167,7 +167,7 @@ class Contact extends Component {
               onChange={this.handleChangeName}
               value={this.state.name}
               className="name"
-              type="text"
+              type="name"
               placeholder="Imię i nazwisko"
             />
             <input

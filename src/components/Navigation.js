@@ -4,7 +4,11 @@ import "../style/Navigation.sass";
 const Navigation = props => {
   return (
     <>
-      <nav className={props.showNavTitle ? "navbar show" : "navbar"}>
+      <nav
+        className={
+          props.showNavTitle ? "navbar show hideBurger" : "navbar hideBurger"
+        }
+      >
         <ul className="navMain">
           <li className={props.showNavTitle ? "title show" : "title hide"}>
             <a href="index.html">Lech Kulesza</a>

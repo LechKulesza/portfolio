@@ -8,6 +8,7 @@ import Info from "./Info";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Arrow from "../components/Arrow";
+import MobileNav from "../components/MobileNav";
 
 const isTopInViewport = function(elem) {
   const bounding = elem.getBoundingClientRect();
@@ -92,6 +93,7 @@ class App extends Component {
             classNamedSection={this.state.loading}
           />
         ) : null}
+        <MobileNav />
         <Navigation
           handleClick={this.handleShowIntoView}
           showNavTitle={this.state.showNavTitle}

@@ -72,3 +72,48 @@
         background-color: rgba(0,0,0,1)
     &.show
         background-color: rgba(0,0,0,1)
+
+
+@media (max-width: 1040px)
+    .navbar
+        width: 100vw
+        height: 100vh
+        background-color: rgba(0,0,0,.5)
+        &:hover
+            background-color: rgba(0,0,0,.5)
+        &.show
+            background-color: rgba(0,0,0,.5)
+        ul.navMain
+            display: block
+            height: 100%
+            width: 75%
+            background-color: $black
+            margin: 0
+            position: relative
+            li a
+                display: inline-block
+                padding: 0
+                padding-left: 50px
+                width: 100%
+                line-height: 50px
+                &:before
+                    display: none
+                &:hover
+                    color: $black
+                    background-color: $orange
+            li.title.hide
+                opacity: 1
+                a
+                    pointer-events: auto
+                    cursor: pointer !important
+            span.navSocial
+                position: absolute
+                top: calc(100vh - 100px)
+                right: 0
+                width: calc(50% + 50px)
+                a
+                    background-color: $black
+                    &:before
+                        display: none
+    &.hideBurger
+        left: -100vw
