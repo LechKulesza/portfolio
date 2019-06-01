@@ -49,6 +49,16 @@ const Navigation = props => {
                 <i className="fab fa-instagram" />
               </a>
             </li>
+            <li>
+              <a
+                className="social"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/kulkazgumek"
+              >
+                <i class="fab fa-github-square" />
+              </a>
+            </li>
           </span>
         </ul>
       </nav>

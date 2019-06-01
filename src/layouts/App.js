@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../style/reset.sass";
-import "../style/App.sass";
 import Loading from "../components/Loading";
 import Navigation from "../components/Navigation";
 import Baner from "./Baner";
@@ -54,7 +53,7 @@ class App extends Component {
       });
     }
 
-    isTopInViewport(document.querySelector(".info p"));
+    isTopInViewport(document.querySelector(".info .paragraph"));
     isTopInViewport(document.querySelector(".info h1"));
     isTopInViewport(document.querySelector(".info .wrapImg"));
     isTopInViewport(document.querySelector(".wrapperContact .contact h1"));
@@ -66,6 +65,10 @@ class App extends Component {
     isTopInViewport(document.querySelector(".wrapperContact .contact .name"));
     isTopInViewport(document.querySelector(".wrapperContact .contact .mail"));
     isTopInViewport(document.querySelector(".wrapperContact .contact .topic"));
+
+    document.querySelector(".navbar").classList.add("hideBurger");
+    document.querySelector(".mobileNavBar .open").classList.remove("close");
+    document.querySelector(".mobileNavBar").classList.remove("openMenu");
   };
 
   handleShowIntoView = () => {
@@ -84,6 +87,12 @@ class App extends Component {
     window.scrollTo(0, 0);
   };
 
+  handleClickNavMobile = () => {
+    document.querySelector(".navbar").classList.toggle("hideBurger");
+    document.querySelector(".mobileNavBar .open").classList.toggle("close");
+    document.querySelector(".mobileNavBar").classList.toggle("openMenu");
+  };
+
   render() {
     return (
       <>
@@ -93,7 +102,10 @@ class App extends Component {
             classNamedSection={this.state.loading}
           />
         ) : null}
-        <MobileNav />
+        <MobileNav
+          handleClickNavMobile={this.handleClickNavMobile}
+          showNavTitle={this.state.showNavTitle}
+        />
         <Navigation
           handleClick={this.handleShowIntoView}
           showNavTitle={this.state.showNavTitle}

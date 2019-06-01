@@ -14,12 +14,41 @@ section.info
         margin-bottom: 20px
         transform: translateX(-100%)
         transition: .5s
-    p
+    section.paragraph
         text-align: justify
         font-size: 18px
         margin: 20px
         transform: translateX(calc(-100% - 20px))
         transition: .5s
+        ul.tools
+            display: flex
+            margin: 20px
+            flex-wrap: wrap
+            li
+                flex-grow: 1
+                flex-basis: 20%
+                padding: 10px 
+                text-align: center
+                cursor: pointer
+                img
+                    display: block
+                    margin: 0 auto
+                    width: 100px
+                    height: 100px
+                    filter: gray
+                    filter: grayscale(1)
+                    transition: .5s
+                span
+                    display: inline-block
+                    opacity: 0
+                    padding: 20px
+                    transition: .5s
+                &:hover img
+                    filter: greyscale(0)
+                    filter: none
+                &:hover span
+                    opacity: 1
+
     div.wrapImg
         display: inline-block
         width: 250px
@@ -40,6 +69,9 @@ section.info
     .visible
         transform: translateX(0) !important
 
-@media (max-width: 1040px)
+@media (max-width: 1140px)
     section.info
         width: 95vw
+@media (max-width: 425px)
+    section.info div.wrapImg
+        float: none

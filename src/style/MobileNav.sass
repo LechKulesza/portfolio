@@ -1,46 +1,78 @@
 @import "./variables.sass"
 
+
 div.mobileNavBar
-    position: fixed
-    top: 0
-    left: 0
-    background-color: rgba(0,0,0,0)
-    width: 100vw
-    height: 50px
-    z-index: 2
-    span
-        visibility: hidden
-    button.open
-        border: 0
-        border-top: 3px solid $grey
-        width: 40px
-        height: 25px
-        background: transparent
-        position: absolute
-        top: 10px
-        right: 15px
-        cursor: pointer
+    display: none
+
+@media (max-width: 1140px)
+    div.mobileNavBar
+        display: block
+        position: fixed
+        top: 0
+        left: 0
+        background-color: rgba(0,0,0,0)
+        width: 100vw
+        height: 50px
         overflow: hidden
-        transform-origin: right top
-        transition: .3s
-        &:before
-            content: ''
+        z-index: 2
+        transition: .5s
+        &.show
+            background-color: rgba(0,0,0,1)
+        &.openMenu
+            transform: translateX(calc(100vw - 70px))
+            background-color: rgba(0,0,0,0)
+        span
+            opacity: 0
+            display: inline-block
+            color: $orange
+            line-height: 50px
+            font-size: 24px
+            width: 100vw
+            text-align: center
+            text-transform: uppercase
+            transition: .5s
+            &.show
+                opacity: 1
+        button.open
+            border: 0
+            outline: none
+            border-top: 3px solid $white
+            width: 40px
+            height: 25px
+            background: transparent
             position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            transform-origin: left bottom
-            transform: translate(0,-3px)
-            border-bottom: 3px solid $grey
-        &:after
-            content: ''
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: calc(50% - 3px)
-            border-bottom: 3px solid $grey
+            top: 10px
+            left: 15px
+            cursor: pointer
+            transition: .3s
+            &:before
+                content: ''
+                position: absolute
+                top: -3px
+                left: 0
+                width: 100%
+                height: 100%
+                border-bottom: 3px solid $white
+                transition: .3s
+            &:after
+                content: ''
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: calc(50% - 3px)
+                border-bottom: 3px solid $white
+                transition: .3s
+            &.close
+                transform: rotateZ(45deg) translate(0,50%)
+                &:after
+                    opacity: 0
+                &:before
+                    top: -65%
+                    left: 25%
+                    transform: rotateZ(-90deg) translate(0,-85%)
+
+
 
 
         
