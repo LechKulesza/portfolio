@@ -56,7 +56,7 @@ const Navigation = props => {
                 rel="noopener noreferrer"
                 href="https://github.com/kulkazgumek"
               >
-                <i class="fab fa-github-square" />
+                <i className="fab fa-github-square" />
               </a>
             </li>
           </span>

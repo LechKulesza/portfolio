@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import $ from "jquery";
 import "../style/reset.sass";
 import Loading from "../components/Loading";
 import Navigation from "../components/Navigation";
@@ -74,17 +75,43 @@ class App extends Component {
   handleShowIntoView = () => {
     setTimeout(() => {
       if (window.location.href.indexOf("main") !== -1) {
-        document.querySelector(".baner").scrollIntoView();
+        $("html, body").animate(
+          {
+            scrollTop: $(".baner").offset().top
+          },
+          500
+        );
+
+        // document.querySelector(".baner").scrollIntoView();
       } else if (window.location.href.indexOf("info") !== -1) {
-        document.querySelector(".info").scrollIntoView();
+        $("html, body").animate(
+          {
+            scrollTop: $(".info").offset().top
+          },
+          500
+        );
+
+        // document.querySelector(".info").scrollIntoView();
       } else if (window.location.href.indexOf("contact") !== -1) {
-        document.querySelector(".contact").scrollIntoView();
+        $("html, body").animate(
+          {
+            scrollTop: $(".contact").offset().top
+          },
+          500
+        );
+
+        // document.querySelector(".contact").scrollIntoView();
       }
     }, 100);
   };
 
   handleGoUp = () => {
-    window.scrollTo(0, 0);
+    $("html, body").animate(
+      {
+        scrollTop: 10
+      },
+      500
+    );
   };
 
   handleClickNavMobile = () => {
