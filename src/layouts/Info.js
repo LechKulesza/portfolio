@@ -12,6 +12,12 @@ import imgNode from "../images/tools/node.png";
 import imgGit from "../images/tools/git.png";
 import imgPs from "../images/tools/photoshop.png";
 import imgLr from "../images/tools/lightroom.png";
+import imgRails from "../images/tools/rails.png";
+import imgRedis from "../images/tools/redis.png";
+import imgPostgresql from "../images/tools/postresql.png";
+import imgMysql from "../images/tools/mysql.png";
+import imgDocker from "../images/tools/docker.png";
+import imgHeroku from "../images/tools/heroku.png";
 
 const Info = () => {
   return (
@@ -21,16 +27,25 @@ const Info = () => {
         <img src={img1} alt="Lech Kulesza" />
       </div>
       <section className="paragraph">
-        Mam na imię Lech, mam 22 lata, jestem studentem trzeciego roku
-        Politechniki Warszawskiej, na kierunku i wydziale Mechatronika,
-        specjalność Techniki Multimedialne. <br />
+        Mam na imię Lech, mam 26 lat, ukończyłem studia magisterskie na
+        Politechnice Warszawskiej, na kierunku i wydziale Mechatronika. <br />
         <br />
-        Żywo interesuję się tworzeniem stron internetowych i chciałbym dalej
-        rozwijać się w tej dziedzinie pracując i tworząc niesamowite projekty.
-        Staram się być na bieżąco z najnowszymi trendami w świecie web
-        developerów oraz wdrażać je do swoich projektów. Pragnę zdobywać nowe
-        umiejętności związane zarówno z Frontend’em jak i Backend’em. Znam i w
-        moich projektach posługuję się takimi narzędziami jak:
+        Jestem Fullstack Developerem z komercyjnym doświadczeniem od ponad 4
+        lat. Pracowałem nad wieloma projektami od prostych stron internetowych
+        po zaawansowane aplikacje mobilne (
+        <a
+          target="_blank"
+          href="https://www.tdcm.io/portfolio"
+          rel="noreferrer"
+        >
+          TDCM.io protfolio
+        </a>
+        ). Cały czas rozwijam się w dziedzinie web oraz mobile developmentu
+        pracując i tworząc niesamowite projekty. Staram się być na bieżąco z
+        najnowszymi trendami w świecie web developerów oraz wdrażać je do swoich
+        projektów. Pragnę zdobywać nowe umiejętności związane zarówno z
+        Frontend’em jak i Backend’em. Znam i w moich projektach posługuję się
+        takimi narzędziami jak:
         <ul className="tools">
           <li>
             <img src={imgHtml} alt="html" />
@@ -57,12 +72,40 @@ const Info = () => {
             <span>React.js</span>
           </li>
           <li>
+            <img src={imgReact} alt="html" />
+            <span>React Native</span>
+          </li>
+          <li>
             <img src={imgJquery} alt="html" />
             <span>jQuery</span>
           </li>
           <li>
             <img src={imgNode} alt="html" />
             <span>Node.js</span>
+          </li>
+          <li>
+            <img src={imgRails} alt="html" />
+            <span>Ruby on Rails</span>
+          </li>
+          <li>
+            <img src={imgRedis} alt="html" />
+            <span>Redis</span>
+          </li>
+          <li>
+            <img src={imgPostgresql} alt="html" />
+            <span>PostgreSQL</span>
+          </li>
+          <li>
+            <img src={imgMysql} alt="html" />
+            <span>MySQL</span>
+          </li>
+          <li>
+            <img src={imgDocker} alt="html" />
+            <span>Docker</span>
+          </li>
+          <li>
+            <img src={imgHeroku} alt="html" />
+            <span>Heroku</span>
           </li>
           <li>
             <img src={imgGit} alt="html" />

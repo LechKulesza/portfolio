@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/Navigation.sass";
 
-const Navigation = props => {
+const Navigation = (props) => {
   return (
     <>
       <nav
@@ -54,7 +54,7 @@ const Navigation = props => {
                 className="social"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/kulkazgumek"
+                href="https://github.com/lechkulesza"
               >
                 <i className="fab fa-github-square" />
               </a>
